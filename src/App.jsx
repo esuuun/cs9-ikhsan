@@ -18,7 +18,7 @@ function App() {
 function AppContent() {
   const { user } = useContext(UserContext);
   return (
-    <>
+    <div className="overflow-x-hidden">
       <Navbar user={user} />
       <Routes>
         <Route path="/register" element={<RegisterPage />} />
@@ -26,7 +26,7 @@ function AppContent() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/products" element={<AllProducts />} />
       </Routes>
-    </>
+    </div>
   );
 }
 

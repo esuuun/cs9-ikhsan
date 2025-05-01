@@ -24,6 +24,7 @@ import {
   SheetTrigger,
 } from "../../components/ui/sheet";
 import axios from "axios";
+import Footer from "../../components/Footer";
 
 export default function AllProducts() {
   const [products, setProducts] = useState([]);
@@ -110,7 +111,7 @@ export default function AllProducts() {
   };
 
   return (
-    <div className="flex min-h-screen flex-col bg-gradient-to-b from-white to-gray-50">
+    <div className="flex min-h-screen w-screen items-center flex-col bg-gradient-to-b from-white to-gray-50">
       <main className="flex-1 container px-4 md:px-6 py-8">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
           <div>
@@ -283,7 +284,7 @@ export default function AllProducts() {
 
             {/* Products grid */}
             {filteredProducts.length > 0 ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
                 {filteredProducts.map((product) => (
                   <ProductCard key={product.id} product={product} />
                 ))}
@@ -317,34 +318,9 @@ export default function AllProducts() {
           </div>
         </div>
       </main>
-
-      <footer className="border-t bg-white py-6">
-        <div className="container px-4 md:px-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-gray-600">
-            © 2024 ShopNow. All rights reserved.
-          </p>
-          <div className="flex gap-4">
-            <a
-              href="/"
-              className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              Home
-            </a>
-            <a
-              href="#"
-              className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              Terms
-            </a>
-            <a
-              href="#"
-              className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              Privacy
-            </a>
-          </div>
-        </div>
-      </footer>
+      <div className="w-full ">
+        <Footer />
+      </div>
     </div>
   );
 }
